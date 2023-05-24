@@ -1,0 +1,29 @@
+class Solution {
+    public static int lengthOfLastWord(String s) {
+        int length = 0;  // initializes length to start at 0
+
+        for (int i = s.length()-1; i >=0; i--) {  // priming the loop to analyze backwards
+            if (s.charAt(i)!= ' ')  // if character is not a space
+                length++;  // counts (via increments) length of characters that aren't spaces
+
+            else if (length > 0)// if character is a space
+
+                return length; // returns newly updated value of length
+        }
+        return length;  // returns newly updated value of length
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Given a string s consisting of words and spaces, " +
+                "\nreturn the length of the last word in the string.");
+
+        System.out.println(" ");
+
+        System.out.println(Solution.lengthOfLastWord("My name is Leonard"));
+
+
+    }
+}
