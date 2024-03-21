@@ -1,0 +1,18 @@
+class Solution:
+    def convertToTitle(self, columnNumber: int) -> str:
+        result = []  # Initialize an empty list to store characters
+
+        while columnNumber > 0:  # Loop until columnNumber becomes 0
+            columnNumber -= 1  # Adjust columnNumber to 0-based index
+            remainder = columnNumber % 26  # Calculate the remainder when divided by 26
+            ch = chr(ord('A') + remainder)  # Convert the remainder to ASCII character (A-Z)
+            result.append(ch)  # Append the character to the result list
+            columnNumber //= 26  # Divide columnNumber by 26 to move to the next digit
+
+        # Join the characters in the result list in reversed order and print the result
+        print(' '.join(reversed(result)))
+
+
+# Example usage:
+solution = Solution()  # Create an instance of the Solution class
+solution.convertToTitle(1)  # Call the convertToTitle method with argument 701
